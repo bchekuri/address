@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: address
+  profiles:
+    active: "local,localDev"
+server:
+  port: 8080
+  servlet:
+    context-path: /address
+info:
+  app:
+    name: address
+    description: US Address processor
+    version: 1.0.0
+application:
+    name: address
+    correlation-id:
+      exclusions:
+        - /address/actuator/health
+        - /address/actuator/metrics
+        - /address/build/version
+
+
+
+
+---
+
+
+spring:
+  profiles: local
+
+
+---
+
+
+spring:
+  profiles: dev
+
+---
+
+spring:
+  profiles: qa
+
+---
+
+spring:
+  profiles: prod
